@@ -11,7 +11,6 @@ function AutoBG.OnLoad(this)
     this:RegisterEvent("OPEN_ENTER_BATTLEGROUND_QUERY_DIALOG")
     this:RegisterEvent("ON_BATTLEGROUND_CLOSE")
 	this:RegisterEvent("PLAYER_DEAD")
-	this:RegisterEvent("LOADING_END")
 end
 
 function AutoBG.OnEvent(event)
@@ -25,8 +24,6 @@ function AutoBG.OnEvent(event)
 		LeaveBattleGround()
 	elseif event == "PLAYER_DEAD" and IsBattleGroundZone() then
 		BrithRevive()
-	elseif event == "LOADING_END" and AutoBG.loading_msg then
-		SendChatMessage("Loading finished, ready to action!", "CHANNEL", 0, 1);
 	end
 end
 
@@ -91,7 +88,6 @@ function AutoBG.StopTimer()
 		AutoBG.loading_msg = true
 	elseif GetBattleGroundQueueStatusNum() == 1 then
 		Leave_All_Battle_Ground_Queue()
-		SendChatMessage("Queue left, ready for action!", "CHANNEL", 0, 1);
 	end
 end
 
