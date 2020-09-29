@@ -28,8 +28,6 @@ function AutoBG.OnEvent(event)
 end
 
 function AutoBG.MenuOnShow(this)
-	AutoBG.Toggle(AutoBG.ToggleStatus)
-
 	local info = {}
 	
     info = {}

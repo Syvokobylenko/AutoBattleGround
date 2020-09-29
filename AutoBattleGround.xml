@@ -34,7 +34,10 @@
 			</Frame>
 		</Frames>
 		<Scripts>
-            <OnLoad>this:RegisterForClicks("LeftButton","RightButton")</OnLoad>
+            <OnLoad>
+				this:RegisterForClicks("LeftButton","RightButton")
+				this:LockPushed()
+			</OnLoad>
 			<OnClick>AutoBG.ButtonOnClick(this, key)</OnClick>
 			<OnEnter>AutoBG.ButtonOnEnter(this)</OnEnter>
 			<OnLeave>AutoBG.ButtonOnLeave(this)</OnLeave>
